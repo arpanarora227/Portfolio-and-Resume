@@ -1,0 +1,261 @@
+@import url(reset.css);
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root{
+    --primebg: black;
+    --secondarybg: #1f1f1f;
+    --primecolor: white;
+    --secondarycolorhover: cyan;
+    --secondarycolor:aquamarine;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color:var(--primebg);
+  color: var(--primecolor);
+  font-size: 1.3em;
+}
+
+/* Navigation Bar */
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: var(--secondarybg);
+  height: 3.3em;
+}
+
+nav ul {
+  display: flex;
+}
+
+nav ul li a {
+    padding: 0.4em;
+    list-style: none;
+    margin: 0em 1.3em;
+    color: var(--primecolor);
+    text-decoration: none;
+    transition: background-color 0.7s, box-shadow 0.4s, color 1s; 
+}
+  
+nav ul li a:hover {
+    box-shadow: 0.1em 0.2em 0.2em silver;
+    color:var(--secondarycolorhover);
+    font-size:1.01em;
+}
+
+/* Home page */
+.intro{
+    display: flex;
+    justify-content: space-around;
+    align-items:center;
+    margin: 2em 0em;
+    
+}
+
+.intro>div{
+    width: 40%;    
+}
+
+/* Left Section of Home page */
+.left{
+    font-size:2.4em;
+}
+
+@keyframes typing{
+    40% {
+        content: "a Web Developer";
+    }
+
+    30%{
+        content: "a Web Devel";
+    }
+
+    20%{
+        content: "a Web";
+    }
+
+    0%, 10%{
+        content: "a W";
+    }
+
+    50% {
+        content: "and a Soft";
+    }
+
+    60%{
+        content: "and a Software";
+    }
+
+    70% {
+        content: "and a Software Eng";
+    }
+
+    80% {
+        content: "and a Software Engine";
+    }
+    
+    90%, 100% {
+        content: "and a Software Engineer";
+    }
+}
+
+.job::before{
+    color: var(--secondarycolor);
+    font-weight:500;
+    content: "a Software Engineer";
+    animation: typing 4s infinite linear;
+}
+
+/* Right section of the Home page */
+.right img{
+    border-radius: 2em;
+    height: auto;
+    max-width: 90%;
+    border-color:black;
+    
+}
+
+.cc{
+    color:var(--secondarycolorhover);
+    font-weight: 700;
+}
+
+
+/* About me or Info */
+.exp{
+    margin: 5em 19em 3em 3em;
+    text-align: justify;
+    padding: 2em;
+    border: 1.3em dashed var(--secondarybg);
+    border-radius:2em;
+}
+
+@keyframes colorchange {
+    0% {
+        color: var(--secondarycolorhover);
+    }
+
+
+    50% {
+        color: var(--secondarycolor);
+    }
+
+
+    100% {
+        color: var(--secondarycolorhover); 
+    }
+}
+
+
+.exp h1{
+    animation: colorchange 5s infinite linear;
+    margin: 0 0 1.2em 0;
+}
+
+.exp p{
+    font-size: 85%;
+}
+
+/* Skills */
+.skill{
+    margin: 5em 21em 3em 21em;
+    border: 1.3em dashed var(--secondarybg);
+    border-radius: 2em;
+    display:inline-block;
+    padding:1em 3em;
+}
+
+.skill table{
+    border: 0.2em solid var(--secondarybg);
+    margin: 1em 0em 4em;
+}
+
+.skill h1{
+    animation: colorchange 5s infinite linear;
+    margin: 1.2em 0em;
+    text-align: center;
+}
+
+.skill th, .skill td{
+    padding: 0.5em;
+    text-align:center;
+    border: 0.2em solid var(--secondarybg);
+}
+
+.skill th{
+    font-weight: 800;
+}
+
+/* Footer */
+footer{
+    background-color: var(--secondarybg);
+    margin: 2em 0em 0em 0em;
+    padding: 2em;
+    border-radius: 1em;
+}
+
+footer table{
+    margin: auto;
+}
+
+footer td{
+    padding:0em 3em;
+    border-right: 0.2em solid var(--primecolor);
+    border-left: 0.2em solid var(--primecolor);
+}
+
+footer i{
+    font-size: 2em;
+    color:var(--primecolor);
+}
+
+.fa-brands.fa-instagram:hover{
+    color: red;
+    transform: translateY(-0.1em);
+}
+
+.fa-brands.fa-facebook-f:hover{
+    color:#3232db;
+    transform: translateY(-0.3em);
+}
+
+.fa-brands.fa-linkedin:hover{
+    color: #0e40bd;
+    background-color:var(--primecolor);
+    transform: translateY(-0.2em);
+}
+
+.fa-brands.fa-x-twitter:hover{
+    color:grey;
+    transform: translateY(-0.2em);
+}
+
+
+/* Media Query*/
+@media only screen and (max-width: 48em) {
+    body {
+        font-size: 0.8em;
+    }
+
+    nav {
+        flex-direction: column;
+        height: auto;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 0.5em 0;
+    }
+
+    .right img {
+        max-width: 80%;
+    }
+
+    .intro, .exp, .skill {
+        margin: 2em 1em;
+    }
+}
